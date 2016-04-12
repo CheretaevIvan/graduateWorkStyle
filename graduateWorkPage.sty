@@ -1,0 +1,40 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%
+%%% для возможности альбомного размещения некоторых страниц 
+%%%
+	\ifpdf
+		\usepackage{pdflscape} 
+	\else 
+		\usepackage{lscape} 
+	\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%
+%%% настройка параметров документа
+%%%
+\usepackage{extsizes}
+
+\usepackage{geometry}
+
+	\geometry{left=30mm}
+	\geometry{right=10mm}
+	\geometry{top=20mm}
+	\geometry{bottom=25mm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%
+%%% настройка нумерации
+%%%
+\usepackage{fancyhdr}
+
+	\pagestyle{fancy}
+	\fancyhf{}
+	\fancyfoot[C]{\thepage}
+	\fancyheadoffset{0mm}
+	\fancyfootoffset{1000mm}
+	\setlength{\headheight}{17pt}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+	\fancypagestyle{plain}{ 
+		\fancyhf[C]{}
+		\chead{\thepage}}
