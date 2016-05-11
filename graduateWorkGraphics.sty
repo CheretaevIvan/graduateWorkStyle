@@ -1,0 +1,56 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%
+%%% подключение цветов и графики (желательно сохранять именно такой порядок)
+%%%
+
+% -------------------------------------------------------
+% Картинки
+% -------------------------------------------------------
+
+	\usepackage{float}
+	\ifpdf 
+		\usepackage[pdftex]{graphicx} 
+	\else
+		\usepackage{graphicx}
+	\fi
+	
+% -------------------------------------------------------
+% Цвета
+% -------------------------------------------------------	
+
+	\usepackage[usenames]{xcolor}
+	
+% -------------------------------------------------------
+% Векторные рисунки
+% -------------------------------------------------------	
+	\ifpdf \else
+		\usepackage{pspicture}
+		\usepackage{pst-plot,pstricks-add}	
+	\fi
+
+	\usepackage{tikz}
+		\usetikzlibrary{arrows,shapes,shadows,decorations}
+		\usetikzlibrary{decorations.pathmorphing}
+		\usetikzlibrary{calc}
+
+	\usepackage[tableposition=top]{caption}
+	\usepackage{subcaption}
+	
+	\DeclareCaptionLabelFormat{gostfigure}{Рисунок~#2}
+	\DeclareCaptionLabelFormat{gosttable}{Таблица~#2}
+	\DeclareCaptionLabelSeparator{gost}{.~}
+	\captionsetup{
+		labelsep=gost,
+		justification=centering,
+		textformat=period
+		}
+	\captionsetup[figure]{
+		labelformat=gostfigure,
+		figurewithin=none
+		}
+	\captionsetup[table]{
+		justification=raggedright,
+		labelformat=gosttable,
+		tablewithin=none
+		}
+	\renewcommand{\thesubfigure}{\asbuk{subfigure}}
