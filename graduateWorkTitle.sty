@@ -1,0 +1,111 @@
+\newcommand*{\ministry}[1]{\gdef\@ministry{#1}}
+\newcommand*{\@ministry}{Министерство образования и науки Российской Федерации}
+
+\newcommand*{\university}[1]{\gdef\@university{#1}}
+\newcommand*{\@university}{ФГАОУ ВПО «УрФУ имени Президента России Б.Н. Ельцина»}
+
+\newcommand*{\institute}[1]{\gdef\@institute{#1}}
+\newcommand*{\@institute}{Институт радиоэлектроники и информационных технологий}
+
+\newcommand*{\department}[1]{\gdef\@department{#1}}
+\newcommand*{\@department}{Кафедра информационных технологий}
+
+\newcommand*{\subtitle}[1]{\gdef\@subtitle{#1}}
+\newcommand*{\@subtitle}{Подзаголовок}
+
+\newcommand*{\teachers}[2]{\gdef\@teachersCount{#1}\gdef\@teachers{#2}}
+\newcommand*{\@teachers}{Преподаватель}
+\newcommand*{\@teachersCount}{1}
+
+\newcommand*{\controllers}[2]{\gdef\@controllersCount{#1}\gdef\@controllers{#2}}
+\newcommand*{\@controllers}{Нормоконтроллер}
+\newcommand*{\@controllersCount}{0}
+
+\newcommand*{\students}[2]{\gdef\@studentsCount{#1}\gdef\@students{#2}}
+\newcommand*{\@students}{Студент}
+\newcommand*{\@studentsCount}{1}
+
+\newcommand*{\group}[1]{\gdef\@group{#1}}
+\newcommand*{\@group}{Группа}
+
+\newcommand*{\city}[1]{\gdef\@city{#1}}
+\newcommand*{\@city}{Город}
+
+
+
+\renewcommand*{\maketitle}{%
+	\begin{titlepage}
+		\center % Center everything on the page
+%----------------------------------------------------------------------------------------
+%		%	HEADING SECTIONS		%----------------------------------------------------------------------------------------	
+		\@ministry \\ % Name of ministry	
+		\@university \\ % Name of your university	
+		\@institute \\ % Name of your institute
+		\@department % Name of your department
+		
+%----------------------------------------------------------------------------------------
+%		%	TITLE SECTIONS		%----------------------------------------------------------------------------------------	
+		
+		\vspace{5cm}
+		{\LARGE \MakeUppercase{\textsc{\@title}}}
+		
+		\@subtitle
+		
+		\vspace{2cm}
+%----------------------------------------------------------------------------------------
+%		%	STUDENTS SECTIONS		%----------------------------------------------------------------------------------------	
+		\begin{minipage}[t]{0.4\textwidth}
+			\begin{flushleft}
+				\ifnum\@teachersCount=1 Преподаватель\else Преподаватели\fi
+			\end{flushleft}
+		\end{minipage}
+		\begin{minipage}[t]{0.4\textwidth}
+			\begin{flushright} 
+				\@teachers
+			\end{flushright}
+		\end{minipage}\\[0.3cm]
+		
+		\ifnum\@controllersCount=0
+		\else 
+			\begin{minipage}[t]{0.4\textwidth}
+				\begin{flushleft}
+					\ifnum\@controllersCount=1 Нормоконтролер\else Нормоконтролеры\fi 
+				\end{flushleft}
+			\end{minipage}
+			\begin{minipage}[t]{0.4\textwidth}
+				\begin{flushright} 
+					\@controllers
+				\end{flushright}
+			\end{minipage}\\[0.3cm]
+		\fi
+		
+		\begin{minipage}[t]{0.4\textwidth}
+			\begin{flushleft}
+				\ifnum\@studentsCount=1 Студент\else Студенты\fi
+			\end{flushleft}
+		\end{minipage}
+		\begin{minipage}[t]{0.4\textwidth}
+			\begin{flushright} 
+				\@students
+			\end{flushright}
+		\end{minipage}\\[0.3cm]
+		
+		\begin{minipage}[t]{0.4\textwidth}
+			\begin{flushleft}
+				Группа
+			\end{flushleft}
+		\end{minipage}
+		\begin{minipage}[t]{0.4\textwidth}
+			\begin{flushright} 
+				\@group
+			\end{flushright}
+		\end{minipage}\\[0.3cm]
+%----------------------------------------------------------------------------------------
+%		%	DATE SECTION		%----------------------------------------------------------------------------------------	
+		\vfill
+		
+		{\@city, \the\year}
+	\end{titlepage}
+}
+\endinput
+\setcounter{page}{2} % начать нумерацию страниц с №2
