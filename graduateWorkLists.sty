@@ -1,0 +1,16 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%
+%%% переопределение буллетов для списков
+%%%
+	\renewcommand{\labelitemii}{{$\mathbf{+}$}}
+	\renewcommand{\labelitemiii}{{$\mathbf{++}$}}
+	
+	\usepackage{enumitem}
+	\makeatletter
+		\AddEnumerateCounter{\asbuk}{\@asbuk}{м}
+	\makeatother
+	\setlist{nolistsep}
+	\renewcommand{\labelitemi}{$\bullet$}
+	\renewcommand{\labelitemii}{$\circ$}
+%	\renewcommand{\labelenumi}{\asbuk{enumi})}
+%	\renewcommand{\labelenumii}{\arabic{enumii})}
