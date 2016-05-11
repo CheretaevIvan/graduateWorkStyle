@@ -1,0 +1,46 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%
+%%% настройка отображения частей
+%%%
+	\usepackage{titlesec}
+	
+	\titleformat{\chapter}[hang]
+	{\filcenter}
+	{}{1pt}{\thechapter. \MakeUppercase}
+	
+	\titleformat{\section}[hang]
+	{\normalsize}
+	{}{1pt}{\thesection. }
+	
+	\titleformat{\subsection}
+	{\normalsize}
+	{}{1pt}{\thesubsection. }
+	
+	% Настройка вертикальных и горизонтальных отступов
+	\titlespacing*{\chapter}{0pt}{0pt}{18pt}
+	\titlespacing*{\section}{1.27cm}{6pt}{12pt}
+	\titlespacing*{\subsection}{1.9cm}{6pt}{6pt}
+	
+%	\renewcommand{\thesubsection}{\arabic{subsection}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%
+%%% настройка оглавления
+%%%	
+	\usepackage{tocloft}
+	
+	\renewcommand{\cfttoctitlefont}{\hspace{0.38\textwidth} \MakeUppercase}
+	\renewcommand{\cftbeforetoctitleskip}{-1em}
+	%	\renewcommand{\cftaftertoctitle}{\mbox{}\hfill \\ \mbox{}\hfill{\footnotesize Стр.}\vspace{-2.5em}}
+	\renewcommand{\cftchapfont}{\MakeUppercase}
+	\renewcommand{\cftsecfont}{\hspace{31pt}}
+	\renewcommand{\cftsubsecfont}{\hspace{11pt}}
+	\renewcommand{\cftbeforechapskip}{1em}
+	\renewcommand{\cftparskip}{-1mm}
+	\renewcommand{\cftdotsep}{2}
+
+	\setcounter{tocdepth}{2} % задать глубину оглавления — до subsection включительно
+	
+		
+	\renewcommand{\l@chapter}[2]{{\@dottedtocline{1}{10pt}{25pt}{#1}{#2}}}
+	\renewcommand{\l@section}[2]{{\@dottedtocline{2}{35pt}{40pt}{#1}{#2}}}
