@@ -2,20 +2,8 @@
 %%%
 %%% подключение пакета приложений
 %%%
-\usepackage[toc, page]{appendix}
+\usepackage{appendix}
 \usepackage{textcase}
-
-%\newcounter{appendcount}
-%\setcounter{appendcount}{0}
-%\renewcommand{\theappendcount}{\Alph{appendcount}}
-%
-%\renewcommand{\appendixname}{ПРИЛОЖЕНИЕ}
-
-%\renewcommand {\appendix}{
-%	\titleformat{\chapter}[hang]
-%	{\filleft}
-%	{\appendixname~\thechapter.~}{1pt}{\MakeUppercase}
-%}
 
 \newcommand{\newappendix}[1]{%
 	\refstepcounter{chapter}\chapter*{\appendixname~\thechapter.~#1}%
