@@ -28,6 +28,9 @@
 \newcommand*{\group}[1]{\gdef\@group{#1}}
 \newcommand*{\@group}{Группа}
 
+\newcommand*{\specialty}[1]{\gdef\@specialty{#1}}
+\newcommand*{\@specialty}{Специальность}
+
 \newcommand*{\city}[1]{\gdef\@city{#1}}
 \newcommand*{\@city}{Город}
 
@@ -46,56 +49,62 @@
 %----------------------------------------------------------------------------------------
 %		%	TITLE SECTIONS		%----------------------------------------------------------------------------------------	
 		
-		\vspace{5cm}
-		{\LARGE \MakeUppercase{\textsc{\@title}}}
+		\vspace{2cm}
+		
+		\begin{flushright}
+			Оценка работы \underline{\hspace{100pt}}
+			
+			Руководитель от УрФУ \underline{\hspace{100pt}}
+		\end{flushright}
+		
+		\vspace{2cm}
+		
+		{\MakeUppercase{\@title}}
 		
 		\@subtitle
 		
 		\vspace{2cm}
 %----------------------------------------------------------------------------------------
 %		%	STUDENTS SECTIONS		%----------------------------------------------------------------------------------------	
-		\begin{minipage}[t]{0.4\textwidth}
+		\begin{minipage}[t]{0.49\textwidth}
 			\begin{flushleft}
-				\ifnum\@teachersCount=1 Преподаватель\else Преподаватели\fi
+				\ifnum\@teachersCount=1 Руководитель от предприятия\else Руководители от предприятия\fi
 			\end{flushleft}
 		\end{minipage}
-		\begin{minipage}[t]{0.4\textwidth}
+		\begin{minipage}[t]{0.49\textwidth}
 			\begin{flushright} 
 				\@teachers
 			\end{flushright}
 		\end{minipage}\\[0.3cm]
 		
-		\ifnum\@controllersCount=0
-		\else 
-			\begin{minipage}[t]{0.4\textwidth}
-				\begin{flushleft}
-					\ifnum\@controllersCount=1 Нормоконтролер\else Нормоконтролеры\fi 
-				\end{flushleft}
-			\end{minipage}
-			\begin{minipage}[t]{0.4\textwidth}
-				\begin{flushright} 
-					\@controllers
-				\end{flushright}
-			\end{minipage}\\[0.3cm]
-		\fi
-		
-		\begin{minipage}[t]{0.4\textwidth}
+		\begin{minipage}[t]{0.49\textwidth}
 			\begin{flushleft}
 				\ifnum\@studentsCount=1 Студент\else Студенты\fi
 			\end{flushleft}
 		\end{minipage}
-		\begin{minipage}[t]{0.4\textwidth}
+		\begin{minipage}[t]{0.49\textwidth}
 			\begin{flushright} 
 				\@students
 			\end{flushright}
 		\end{minipage}\\[0.3cm]
 		
-		\begin{minipage}[t]{0.4\textwidth}
+		\begin{minipage}[t]{0.49\textwidth}
+			\begin{flushleft}
+				Специальность
+			\end{flushleft}
+		\end{minipage}
+		\begin{minipage}[t]{0.49\textwidth}
+			\begin{flushright} 
+				\@specialty
+			\end{flushright}
+		\end{minipage}\\[0.3cm]
+		
+		\begin{minipage}[t]{0.49\textwidth}
 			\begin{flushleft}
 				Группа
 			\end{flushleft}
 		\end{minipage}
-		\begin{minipage}[t]{0.4\textwidth}
+		\begin{minipage}[t]{0.49\textwidth}
 			\begin{flushright} 
 				\@group
 			\end{flushright}
