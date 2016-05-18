@@ -33,24 +33,27 @@
 		\usetikzlibrary{decorations.pathmorphing}
 		\usetikzlibrary{calc}
 
-	\usepackage[tableposition=top]{caption}
+	\usepackage[singlelinecheck=off,tableposition=top]{caption}
 	\usepackage{subcaption}
 	
 	\DeclareCaptionLabelFormat{gostfigure}{Рисунок~#2}
 	\DeclareCaptionLabelFormat{gosttable}{Таблица~#2}
-	\DeclareCaptionLabelSeparator{gost}{.~}
-	\captionsetup{
-		labelsep=gost,
-		justification=centering,
-		textformat=period
+	\DeclareCaptionLabelSeparator{gostfigurelabelseparator}{.~}
+	\DeclareCaptionLabelSeparator{gosttablelabelseparator}{~-~}
+	\captionsetup{		
+		textformat=period,
+		figurewithin=none,
+		tablewithin=none
 		}
 	\captionsetup[figure]{
+		labelsep=gostfigurelabelseparator,
+		justification=centering,
 		labelformat=gostfigure,
 		figurewithin=none
 		}
-	\captionsetup[table]{
-		justification=raggedright,
-		labelformat=gosttable,
-		tablewithin=none
-		}
+	\captionsetup[longtable]{
+		labelsep=gosttablelabelseparator,
+		justification=raggedleft,
+		labelformat=gosttable
+	}
 	\renewcommand{\thesubfigure}{\asbuk{subfigure}}
