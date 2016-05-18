@@ -2,24 +2,33 @@
 %%%
 %%% настройка отображения частей
 %%%
-	\usepackage{titlesec}
+\usepackage{titlesec}
+	
+	\titleformat{name=\chapter,numberless}[block]
+	{\filcenter\normalsize}
+	{}{1pt}{\MakeUppercase}
 	
 	\titleformat{\chapter}[hang]
-	{\filcenter}
-	{}{1pt}{\thechapter. \MakeUppercase}
+	{\filcenter\normalsize}
+	{}{1pt}{\thechapter.~\MakeUppercase}
 	
 	\titleformat{\section}[hang]
 	{\normalsize}
-	{}{1pt}{\thesection. }
+	{}{1pt}{\thesection.~}
 	
 	\titleformat{\subsection}
 	{\normalsize}
-	{}{1pt}{\thesubsection. }
+	{}{1pt}{\thesubsection.~}
+	
+	\titleformat{\subsubsection}
+	{\normalsize}
+	{}{1pt}{\thesubsubsection.~}
 	
 	% Настройка вертикальных и горизонтальных отступов
 	\titlespacing*{\chapter}{0pt}{0pt}{18pt}
 	\titlespacing*{\section}{1.27cm}{6pt}{12pt}
 	\titlespacing*{\subsection}{1.9cm}{6pt}{6pt}
+	\titlespacing*{\subsubsection}{2.5cm}{6pt}{6pt}
 	
 %	\renewcommand{\thesubsection}{\arabic{subsection}}
 
@@ -41,6 +50,27 @@
 
 	\setcounter{tocdepth}{2} % задать глубину оглавления — до subsection включительно
 	
-		
-	\renewcommand{\l@chapter}[2]{{\@dottedtocline{1}{10pt}{25pt}{#1}{#2}}}
-	\renewcommand{\l@section}[2]{{\@dottedtocline{2}{35pt}{40pt}{#1}{#2}}}
+	\renewcommand*\l@chapter[2]{%
+		\ifnum \c@tocdepth >\m@ne
+		\addpenalty{-\@highpenalty}%
+		\vskip 1.0em \@plus\p@
+		\setlength\@tempdima{1.5em}%
+		\begingroup
+		\parindent \z@ \rightskip \@pnumwidth
+		\parfillskip -\@pnumwidth
+		\leavevmode %\MakeUppercase
+		\advance\leftskip\@tempdima
+		\hskip -\leftskip
+		#1\nobreak
+		\xleaders\hbox{$\m@th
+			\mkern \@dotsep mu\hbox{.}\mkern \@dotsep
+			mu$}\hfill%
+		\nobreak\hb@xt@\@pnumwidth{\hss #2}\par
+		\penalty\@highpenalty
+		\endgroup
+		\fi}
+	\renewcommand*\l@section{\@dottedtocline{1}{1.5em}{2.3em}}
+	\renewcommand*\l@subsection{\@dottedtocline{2}{3.8em}{3.2em}}
+	\renewcommand*\l@subsubsection{\@dottedtocline{3}{7.0em}{4.1em}}
+	\renewcommand*\l@paragraph{\@dottedtocline{4}{10em}{5em}}
+	\renewcommand*\l@subparagraph{\@dottedtocline{5}{12em}{6em}}
