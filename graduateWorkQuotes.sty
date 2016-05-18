@@ -2,7 +2,17 @@
 %%%
 %%% подключение цитат
 %%%
-	\usepackage{csquotes}
+
+\usepackage[comma,square,numbers,sort&compress]{natbib}
+
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%
+%%% настройка списка использованных источников
+%%%		
+\renewcommand{\bibname}{Список использованных источников}
+
+\usepackage{csquotes}
 	\DeclareQuoteStyle{russian}
 		{\guillemotleft}{\guillemotright}[0.025em]
 		{\quotedblbase}{\textquotedblleft}
